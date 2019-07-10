@@ -1,0 +1,7 @@
+{
+  "name": "mapboxtest",
+  "displayName": "mapbox-test",
+  "expo": {
+    "sdkVersion": "33.0.0"
+  }
+}
