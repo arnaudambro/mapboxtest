@@ -3,6 +3,7 @@ import React from 'react';
 import { View } from 'react-native';
 import MapboxGL from '@react-native-mapbox-gl/maps';
 import variables from './env'
+import exampleIcon from './assets/example.png';
 
 MapboxGL.setAccessToken(variables.MAPBOX_API_TOKEN);
 
@@ -28,6 +29,9 @@ const featureCollection = {
     {
       type: 'Feature',
       id: '9d10456e-bdda-4aa9-9269-04c1667d4552',
+      properties: {
+        icon: 'example',
+      },
       geometry: {
         type: 'Point',
         coordinates: [-117.20611157485, 52.180961084261],
@@ -68,6 +72,9 @@ class ShapeSourceIcon extends React.Component {
             zoomLevel={17}
             centerCoordinate={[-117.20611157485, 52.180961084261]}
           />
+          <MapboxGL.Images
+            images={{example: exampleIcon, assets: ['pin']}}
+          />
           <MapboxGL.ShapeSource
             id="exampleShapeSource"
             shape={featureCollection}
@@ -81,3 +88,4 @@ class ShapeSourceIcon extends React.Component {
 }
 
 export default ShapeSourceIcon;
+
